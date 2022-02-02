@@ -27,17 +27,15 @@
 
     <authentication-manager>
         <authentication-provider>
-            <user-service>
-                <user name="john" password="doe" authorities="ROLE_USER"/>
-                <user name="jane" password="doe" authorities="ROLE_USER,ROLE_ADMIN"/>
-                <user name="admin" password="admin" authorities="ROLE_ADMIN"/>
-            </user-service>
-            <password-encoder ref="encoder"/>
+            <password-encoder hash="md5" >
+                <salt-source system-wide="SpringSalt"/>
+            </password-encoder>
+            <user-service properties="/WEB-INF/users.properties" />
         </authentication-provider>
     </authentication-manager>
 
-    <beans:bean id="encoder" class="org.springframework.security.crypto.password.NoOpPasswordEncoder"/>
-
+    <beans:bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    
     <beans:bean id="tokenRepo" class="org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository">
         <beans:property name="sessionAttributeName" value="_csrf"/>
         <beans:property name="headerName" value="X-CSRF-TOKEN"/>
