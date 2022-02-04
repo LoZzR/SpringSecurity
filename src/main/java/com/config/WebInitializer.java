@@ -8,7 +8,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
-//Used instead of web.xml file
+//Used instead of web.xml
 public class WebInitializer implements WebApplicationInitializer {
 
     @Override
@@ -18,6 +18,6 @@ public class WebInitializer implements WebApplicationInitializer {
         registration.addMapping("/");
         registration.setInitParameter("contextConfigLocation", "/WEB-INF/spring/*.xml");
         servletContext.addFilter("securityFilter", new DelegatingFilterProxy("springSecurityFilterChain"))
-        .addMappingForUrlPatterns(null, false, "/*");
+                .addMappingForUrlPatterns(null, false, "/*");
     }
 }

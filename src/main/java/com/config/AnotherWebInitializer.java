@@ -1,10 +1,10 @@
 package com.config;
 
-import org.springframework.security.web.context.AbstractDispatcherServletInitializer;
-import javax.servlet.WebApplicationContext;
-import javax.servlet.XmlWebApplicationContext;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.XmlWebApplicationContext;
+import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
 
-//Another way to replace web.xml, used with SecurityInitializer.java
+//Used instead of web.xml
 public class AnotherWebInitializer extends AbstractDispatcherServletInitializer {
 
     @Override
@@ -18,10 +18,15 @@ public class AnotherWebInitializer extends AbstractDispatcherServletInitializer 
     protected WebApplicationContext createServletApplicationContext() {
         XmlWebApplicationContext ctx = new XmlWebApplicationContext();
         ctx.setConfigLocations(
-        // MVC configuration
-        "/WEB-INF/spring/mvc-config.xml",
-        // Service configuration
-        "/WEB-INF/spring/app-config.xml");
+                // MVC configuration
+                "/WEB-INF/spring/mvc-config.xml",
+                // Service configuration
+                "/WEB-INF/spring/app-config.xml");
         return ctx;
+    }
+
+    @Override
+    protected String[] getServletMappings() {
+        return new String[]{"/"};
     }
 }
