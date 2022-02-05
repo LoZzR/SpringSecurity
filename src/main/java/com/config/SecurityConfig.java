@@ -21,7 +21,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/resources/**","/images/**","/styles/**");
+        web.ignoring().mvcMatchers("/resources/**","/images/**","/styles/**");
     }
 
     @Autowired
@@ -41,10 +41,10 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/resources/**","/images/**","/styles/**").permitAll()
-                .antMatchers("/persons/newPerson").hasRole("ADMIN")
-                .antMatchers("/detectives/*").hasRole("ADMIN")
-                .antMatchers("/**").hasAnyRole("ADMIN","USER")
+                .mvcMatchers("/resources/**","/images/**","/styles/**").permitAll()
+                .mvcMatchers("/persons/newPerson").hasRole("ADMIN")
+                .mvcMatchers("/detectives/*").hasRole("ADMIN")
+                .mvcMatchers("/**").hasAnyRole("ADMIN","USER")
                 .anyRequest()
                 .authenticated()
                 .and()
