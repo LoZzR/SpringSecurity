@@ -1,11 +1,11 @@
 package com.services.impl;
 
-import entities.Person;
-import exceptions.PersonNotFoundException;
+import com.entities.Person;
+import com.exceptions.PersonNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repo.SpringDataPersonRepo;
-import services.IPersonService;
+import com.repo.SpringDataPersonRepo;
+import com.services.IPersonService;
 
 import java.util.List;
 

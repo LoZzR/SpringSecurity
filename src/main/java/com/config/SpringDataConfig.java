@@ -67,7 +67,7 @@ public class SpringDataConfig {
     public EntityManagerFactory entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean factoryBean =
                 new LocalContainerEntityManagerFactoryBean();
-        factoryBean.setPackagesToScan("entities");
+        factoryBean.setPackagesToScan("com.entities");
         factoryBean.setDataSource(dataSource());
         factoryBean.setJpaVendorAdapter(new
                 HibernateJpaVendorAdapter());

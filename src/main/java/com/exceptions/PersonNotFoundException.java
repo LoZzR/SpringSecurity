@@ -1,6 +1,6 @@
 package com.exceptions;
 
-import entities.Person;
+import com.entities.Person;
 
 public class PersonNotFoundException extends NotFoundException{
 

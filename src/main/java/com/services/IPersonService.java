@@ -1,6 +1,6 @@
 package com.services;
 
-import entities.Person;
+import com.entities.Person;
 
 import java.util.List;
 
