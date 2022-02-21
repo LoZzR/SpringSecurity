@@ -1,3 +1,4 @@
+<!--XML based configuration-->
 <web-app>
     <!-- The root web application context is the security context-->
     <context-param>
@@ -30,11 +31,13 @@
         </servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>
-                /WEB-INF/spring/mvc-config.xml
-                /WEB-INF/spring/app-config.xml
-            </param-value>
+            <param-value>/WEB-INF/spring/mvc-config.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <!-- Map all requests to the DispatcherServlet for handling -->
+    <servlet-mapping>
+        <servlet-name>main-dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 </web-app>
