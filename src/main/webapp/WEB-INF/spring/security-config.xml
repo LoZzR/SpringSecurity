@@ -26,12 +26,10 @@
     </http>
     <authentication-manager>
         <authentication-provider>
-            <user-service>
-                <user name="john" password="doe" authorities="ROLE_USER"/>
-                <user name="jane" password="doe" authorities="ROLE_USER,ROLE_ADMIN"/>
-                <user name="admin" password="admin" authorities="ROLE_ADMIN"/>
-            </user-service>
-            <password-encoder ref="encoder"/>
+            <user-service properties="/WEB-INF/users.properties" />
+            <password-encoder hash="md5" >
+                <salt-source system-wide="SpringSalt"/>
+            </password-encoder>
         </authentication-provider>
     </authentication-manager>
 
