@@ -1,9 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: iulianacosmina
-  Date: 2019-07-28
-  Time: 16:05
---%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <?xml version="1.0" encoding="UTF-8" ?>
