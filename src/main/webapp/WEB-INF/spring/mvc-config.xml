@@ -84,9 +84,9 @@
         </bean>-->
 
     <!-- needed to pick up the annotated java-config -->
-    <context:component-scan base-package="com.config"/>
+   <!-- <context:component-scan base-package="com.config"/>
 
-    <!-- Importing java-config class, which are annotated with @Configuration -->
-    <bean name="springDataConfig" class="com.config.SpringDataConfig" />
+    &lt;!&ndash; Importing java-config class, which are annotated with @Configuration &ndash;&gt;
+    <bean name="springDataConfig" class="com.config.SpringDataConfig" />-->
 
 </beans>

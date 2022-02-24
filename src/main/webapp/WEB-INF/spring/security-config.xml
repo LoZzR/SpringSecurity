@@ -27,9 +27,6 @@
     <authentication-manager>
         <authentication-provider>
             <user-service properties="/WEB-INF/users.properties" />
-            <password-encoder hash="md5" >
-                <salt-source system-wide="SpringSalt"/>
-            </password-encoder>
         </authentication-provider>
     </authentication-manager>
 
